@@ -1,0 +1,627 @@
+@font-face {
+  font-family: "Hypertext";
+  src: url("../fonts/Hypertext.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SpaceGrotesque";
+  src: url("../fonts/SpaceGrotesk.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SpaceMono";
+  src: url("../fonts/SpaceMono-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SpaceMono";
+  src: url("../fonts/SpaceMono-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+body{
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  z-index: 0;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+header{
+  top: 0;
+    padding: 2em;
+    height: 3em;
+    width: 100%;
+    background-color: #ffffff00;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    box-sizing: border-box;
+    transition-property: opacity, translate, background-color, backdrop-filter;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-in-out;
+    z-index: 10;
+    
+    
+    @starting-style {
+      opacity: 0;
+      translate: 0px -20px;
+    }
+}
+
+header:hover{
+    background-color: #ffffff01;
+    backdrop-filter: blur(24px);
+}
+
+.logoWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: start;
+  width: 50%;
+}
+
+.buttonWrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 1.5em;
+  align-items: center;
+  justify-content: end;
+  width: 50%;
+}
+
+.logoBtn{
+  display: block;
+  height: 18px;
+  width: auto;
+  cursor: pointer;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
+}
+
+.logoBtn:hover{
+  opacity: 50%;
+}
+
+.headerBtn{
+    text-decoration: none;
+    font-family: "SpaceGrotesque", sans-serif;
+    font-variation-settings: "wght" 400;
+    letter-spacing: 5%;
+    font-size: 0.7  em;
+    color: #ffffff;
+    opacity: 100%;
+    transition: opacity 0.3s;
+    background-color: transparent;
+    border: transparent;
+    width: auto;
+    cursor: pointer;
+}
+.headerBtn:hover{
+    opacity: 50%;
+}
+
+#lastestDrop{
+  position: relative;
+  margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.dropFond {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+
+#lastestVideo{
+  margin: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    overflow-y: hidden;
+}
+
+.geoWrapper{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    height: auto;
+    bottom: 0;
+    left: 0;
+    color: #ffffff;
+    font-family: "SpaceMono", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.coordinates{
+    margin: 0;
+    height: auto;
+    padding: 0;
+}
+
+.dateWrapper{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    height: auto;
+    bottom: 0;
+    right: 0;
+    color: #ffffff;
+    font-family: "SpaceMono", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 5%;
+    font-size: 1em;
+    padding: 1em;
+}
+
+.date{
+    margin: 0;
+    height: auto;
+    padding: 0;
+}
+
+#autreCam{
+  position: relative;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  background-color: transparent;
+  cursor: none;
+}
+
+.canvaCam{
+  position: absolute;
+  align-items: center;
+  inset: 0;
+  z-index: 0;
+  cursor: none;
+}
+
+#autreCamText{
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  width: 70%;
+  height: auto;
+  text-align: center;
+  align-self: center;
+  justify-content: center;
+  color: #ffffff;
+  font-family: "SpaceMono", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 1em;
+  font-size: 12em;
+  padding: 1em;
+  text-decoration: none;
+  cursor: none;
+}
+
+.merch{
+  position: relative;
+  height: 50vh;
+  display: flex;
+  flex-direction: row;
+  padding: 4em;
+  background-image: url("../MAREA/MERCH/MERCH_GLOBAL.png");
+  background-size: cover;
+  background-position-x: right;
+  background-position-y: center;
+}
+
+.merchWrapper{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+}
+
+.merchTitle{
+    font-family: "SpaceMono", sans-serif;
+    color: white;
+    font-weight: bold;
+  text-transform: uppercase;
+  font-size: 6em;
+  line-height: 1em;
+  margin: 0;
+}
+
+.merchDesc{
+    font-family: "SpaceGrotesque", sans-serif;
+    color: white;
+  font-variation-settings: "wght" 400;
+  text-transform: uppercase;
+  font-size: 3em;
+  line-height: 1em;
+  margin: 0;
+}
+
+.merchBttn{
+    font-family: "SpaceGrotesque", sans-serif;
+    color: rgb(0, 0, 0);
+  font-variation-settings: "wght" 900;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  justify-items: center;
+
+  height: auto;
+  width: 10vw;
+  padding: 4px;
+  margin-top: 2em;
+  background-color: #ffffff;
+  opacity: 70%;
+  text-decoration: none;
+}
+
+#locationPage{
+  height: 100vh;
+  align-content: center;
+}
+
+.grilleCCTV {
+  position: relative;
+  background-color: #000000;
+  height: 50vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 33% 34% 33%;
+}
+.grilleCCTV div {
+  position: relative;
+  display: flex;
+  width: auto;
+  flex-direction: column;
+  gap: 8px;
+  align-content: center;
+  justify-content: end;
+  text-align: center;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition-property: filter;
+  transition-duration: 0.3s;
+}
+
+.grilleCCTV div:hover{
+  filter: grayscale(0)
+}
+
+.Ville {
+  font-family: "SpaceMono", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 4em;
+  line-height: 1em;
+  margin: 0;
+}
+.Adresse {
+  font-family: "SpaceGrotesque", sans-serif;
+  font-variation-settings: "wght" 400;
+  font-size: 2em;
+  letter-spacing: 5%;
+  margin: 0;
+}
+
+.videoCCTV {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}
+
+.localisation {
+  height: 100%;
+  bottom: 4em;
+  color: #ffffff;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  opacity: 50%;
+  
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+
+.localisation:hover {
+  opacity: 100%;
+}
+
+.artistWrapper{
+  position: relative;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.artist{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: center;
+  overflow: hidden;
+}
+
+.artist div{
+  position: absolute;
+  z-index: 1;
+  height: 100vh;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+  padding-left: 4em;
+  align-content: end;
+  justify-content: end;
+  backdrop-filter: blur(24px);
+  z-index: 2;
+}
+
+.artistImg{
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.linkDancer{
+  text-decoration: none;
+  opacity: 100%;
+  transition-property: opacity;
+  transition-duration: 0.4;
+}
+
+.linkDancer:hover{
+  opacity: 50%;
+}
+
+#infos{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  bottom: 4em;
+  padding: 0px;
+}
+
+.artistH1{
+  color: white;
+  font-family: "SpaceMono", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 4em;
+  padding: 0px;
+  margin: 0px;
+}
+
+.artistStyle{
+  color: white;
+  font-family: "SpaceGrotesque", sans-serif;
+  font-variation-settings: "wght" 400;
+  text-transform: uppercase;
+  font-size: 2em;
+  padding: 0px;
+  margin: 0px;
+}
+
+#about{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  height: 100vh;
+  width: 100%;
+  background-color: #7a93b8;
+  cursor: none;
+}
+
+.canvaAbout{
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  cursor: none;
+}
+
+#intention{
+  position: absolute;
+  color: black;
+  height: 100%;
+  font-family: "SpaceGrotesque", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+  line-height: 1em;
+  font-size: 6em;
+  text-align: justify;
+  z-index: 2;
+  padding-left: 1em;
+  padding-right: 1em;
+  align-content: center;
+  margin: 0px;
+  top: -0.5em;
+}
+
+#intentionNote{
+  position: absolute;
+  color: rgb(255, 255, 255);
+  height: 100%;
+  font-family: "SpaceGrotesque", sans-serif;
+  font-variation-settings: "wght" 400;
+  letter-spacing: 5%;
+  line-height: 1em;
+  font-size: 1.4em;
+  text-align: justify;
+  z-index: 2;
+  padding-left: 5em;
+  padding-right: 5em;
+  margin: 0px;
+  align-content: center;
+  bottom: -12em;
+}
+
+#merchPage{
+  position: relative;
+  height: auto;
+  background-color: #e2e2e2;
+}
+
+#merchTitle{
+  color: black;
+  height: 70vh;
+  width: 100%;
+  font-family: "SpaceMono", sans-serif;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 5%;
+  line-height: 0.8em;
+  font-size: 8vw;
+  text-overflow: clip;
+  padding-top: 0.5em;
+  padding-left: 0.1em;
+  margin: 0px;
+  align-content: end;
+}
+
+.merchWrapper2{
+  background-color: #e2e2e2;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  height: auto;
+  width: 100%;
+  padding-top: 8em;
+  padding-bottom: 8em;
+}
+
+.merchUnit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  gap: 1em;
+  width: 22%;
+  height: auto;
+}
+
+.merchImg{
+  height: 40vh;
+  object-fit: cover;
+}
+
+.merchInfos{
+  display: flex;
+  flex-direction: column;
+  gap: 1.2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+}
+
+.merchUnitTitle{
+  font-family: "SpaceMono", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 5%;
+  line-height: 0.8em;
+  font-size: 2em;
+  margin: 0px;
+}
+
+.merchUnitDesc{
+  font-family: "SpaceGrotesque", sans-serif;
+  font-variation-settings: "wght" 500, "MONO" 0;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 5%;
+  line-height: 0.8em;
+  font-size: 1.4em;  
+  margin: 0px;
+}
+
+.merchUnitPrice{
+  font-family: "SpaceGrotesque", sans-serif;
+  font-variation-settings: "wght" 500, "MONO" 0;
+  text-transform: uppercase;
+  text-align: left;
+  letter-spacing: 5%;
+  line-height: 0.8em;
+  font-size: 1em;  
+  margin: 0px;
+}
+
+footer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  bottom: 0;
+  width: 100%;
+  height: 20vh;
+  background-color: #ff4c22;
+  color: #ffffff;
+  font-family: "SpaceGrotesque", sans-serif;
+  font-variation-settings: "wght" 400;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+  font-size: 0.7em;
+}
+
+.legalWrapper{
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  height: 100%;
+  width: 95%;
+  color: #ffffff;
+  font-family: "SpaceMono", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 5%;
+  font-size: 1.2em;
+  z-index: 2;
+}
+
+.footerLogo{
+  filter: invert(100%);
+  position: absolute;
+  top: -2em;
+  width: 102vw;
+}
